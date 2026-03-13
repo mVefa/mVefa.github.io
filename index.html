@@ -2,22 +2,49 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Kişisel Portfolyo</title>
+    <title>Kişisel Portfolyo - CSS Ödevi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Ana Sayfa</a> | 
-            <a href="about.html">Hakkımda</a> | 
-            <a href="interests.html">İlgi Alanlarım</a> | 
-            <a href="contact.html">İletişim</a>
-        </nav>
-    </header>
+    <div class="page-wrapper">
+        
+        <header class="main-header">
+            <div class="logo">CSS Temel Ödevi</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="about.html">Hakkımda</a></li>
+                    <li><a href="interests.html">İlgi Alanlarım</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        <h1>Hoş Geldiniz</h1>
-        <p>Ben bir Bilgisayar Mühendisliği öğrencisiyim. Bu sayfa benim ilk web programlama projelerimden biridir.</p>
-        <p>Sol üstteki menüyü kullanarak hakkımda daha fazla bilgi edinebilirsiniz.</p>
-    </main>
+        <div class="intro-section">
+            <h1>Hoş Geldiniz</h1>
+            <p>Bu sayfa benim web programlama projelerimden biridir. Verilen benzer bir düzenle basit bir web sayfası oluşturup CSS'in temel özelliklerini uyguladım.</p>
+        </div>
+
+        <div class="content-wrapper">
+            
+            <main class="content">
+                <h2>İçerik</h2>
+                <p>Bu alanda örnek içerik metinleri bulunmaktadır. Css özellikleriyle bu metinler arasında boşluklar (line-height) ve hizalamalar (text-align) düzenlenmiştir.</p>
+                <p>Sol üstteki menüyü kullanarak hakkımda daha fazla bilgi edinebilirsiniz. Öğrendiğimiz hiyerarşik seçicileri kullanarak projemizi şekillendirdik.</p>
+            </main>
+
+            <aside class="sidebar">
+                <h2>Yan Menü / Bilgi</h2>
+                <p>Bu alan yan menü veya bilgi kısmıdır. CSS ile genişlik, kenar boşlukları ve arkaplan renkleri kullanılarak düzenlenmiştir.</p>
+                <p>İki kutuyu yan yana getirmek için display mantığı kullanılmış ve sayfa yapısı semantik etiketlerle (header, main, aside, footer) ayrılmıştır.</p>
+            </aside>
+            
+        </div>
+
+        <footer>
+            <p>&copy; 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırmasıdır.</p>
+        </footer>
+        
+    </div>
 </body>
 </html>

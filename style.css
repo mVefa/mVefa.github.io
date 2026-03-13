@@ -1,0 +1,176 @@
+/* Temel Sıfırlama */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f1f3f6;
+    padding: 20px;
+}
+
+/* 1. Grup Seçici Ödevi (Birden fazla etikete aynı stili verme) */
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Sayfa Çerçevesi */
+.page-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/* Üst Menü ve Başlık Alanı (Header) */
+.main-header {
+    background-color: #e2e8f0;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ccc;
+    /* İki öğeyi sağa ve sola yaslamak için */
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #444;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+/* 2. Hiyerarşik Seçici Ödevi (nav içindeki ul içindeki li) */
+nav ul li {
+    display: inline-block; /* Menüyü yatay yapmak için ödevde istenen özellik */
+    margin-left: 10px;
+}
+
+/* Hover efekti eklendi */
+nav ul li a {
+    text-decoration: none;
+    background-color: #7b9acc;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #5a7bb5;
+}
+
+/* Üst Metin Alanı */
+.intro-section {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* 3. Yan Yana İki Kutu Alanı (Display mantığı) */
+.content-wrapper {
+    display: flex; /* Kutuları yan yana getirmek için en temiz yol */
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Sol İçerik Kutusu (main) */
+.content {
+    flex: 1;
+    background-color: #fdf6e3;
+    padding: 15px;
+    border: 1px solid #e1d8c1;
+    border-radius: 5px;
+}
+
+/* Sağ Yan Menü Kutusu (aside) */
+.sidebar {
+    flex: 1;
+    background-color: #e0f2f1;
+    padding: 15px;
+    border: 1px solid #b2dfdb;
+    border-radius: 5px;
+}
+
+/* 4. Metinlerde en az 3 farklı özellik ödevi (font-size, color, line-height, text-align) */
+.content p, .sidebar p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+/* Footer Alanı */
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    color: #777;
+    border-top: 1px solid #ccc;
+}
+
+/* --- İLETİŞİM FORMU TASARIMI --- */
+
+/* 1. ve 2. Kural: Genişlik, ortalama, iç boşluk (padding) ve kenarlık ayarları */
+.contact-container {
+    width: 600px; /* Hocanın istediği belirli genişlik */
+    max-width: 90%; /* Mobilde taşmasın diye ufak bir önlem */
+    margin: 40px auto; /* Sayfayı ortalamak için margin: auto kullanımı */
+    padding: 30px; /* Kenarlara yapışmaması için geniş iç boşluk */
+    border: 1px solid #ccc; /* Belirgin kenarlık */
+    border-radius: 8px; /* Hafif köşe yuvarlama */
+    background-color: #fcfcfc;
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Her alanın başlığı (label) için ayar */
+.contact-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+/* 4. Kural: Çoklu seçici ile input, select ve textarea'ya toplu müdahale */
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container select,
+.contact-container textarea {
+    width: 100%; /* Tamamını kaplama */
+    padding: 12px; /* Ferah durması için iç boşluk */
+    margin-bottom: 20px; /* Altlarındaki elemanlarla arasına boşluk */
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-family: inherit;
+    box-sizing: border-box; /* Padding'in width: 100% ayarını bozmasını engeller */
+}
+
+/* 5. Kural: Gönder butonu tasarımı */
+.contact-container .submit-btn {
+    background-color: #5a7bb5; /* Menüyle uyumlu mavi tonu */
+    color: white;
+    border: none; /* Kenarlığı kaldırma */
+    padding: 15px 30px; /* Hem sağ-sol hem alt-üst padding ile büyütme */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Butonu da forma yaydık, görsel olarak daha güçlü durur */
+    transition: background-color 0.3s ease;
+}
+
+.contact-container .submit-btn:hover {
+    background-color: #456294; /* Üzerine gelince rengi koyulaşsın */
+}
