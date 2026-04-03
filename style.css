@@ -327,3 +327,151 @@ footer {
     background-color: #1e293b;
     color: #94a3b8;
 }
+
+/* =======================================================
+   --- POSITION LAB ÖZEL STİLLERİ --- 
+======================================================== */
+
+/* Bu sayfanın arka plan rengini örnek görseldeki gibi açık gri yapalım */
+.pos-lab-body {
+    background-color: #f1f1f1;
+}
+
+/* --- ORTAK BUTON VE ROZET STİLLERİ --- */
+.back-btn, .fixed-helper-btn, .abs-badge {
+    cursor: pointer; /* 1. Etkileşimli alan (cursor değişimi) */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease; /* Zıplama efekti için transition */
+}
+
+/* Butonların üzerine gelince zıplama ve büyüme efekti (Etkileşim 1: Transition + Hover) */
+.back-btn:hover, .fixed-helper-btn:hover {
+    transform: scale(1.08) translateY(-3px); /* Hem büyüsün hem de hafifçe yukarı zıplasın */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Butona tıklandığındaki efekt (Etkileşim 2: :active efekti) */
+.back-btn:active, .fixed-helper-btn:active {
+    transform: scale(0.95);
+    background-color: #333;
+}
+
+/* --- ANA SAYFAYA DÖN BUTONU (Header içinde) --- */
+.back-btn {
+    display: inline-block;
+    background-color: #2563eb; /* Örnek görseldeki mavi */
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+/* --- YARDIMCI MENÜ BUTONU (Zorunlu Kural: FIXED) --- */
+.fixed-helper-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #7c3aed; /* Örnek görseldeki mor */
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    z-index: 9999; /* Her zaman en üstte kalmasını garanti ederiz */
+    animation: pulse 2s infinite; /* Havada asılı kalma gibi hissettiren animasyon */
+}
+
+/* Havada asılı kalma animasyonu (Etkileşim 3: Keyframes Animasyonu) */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+/* --- DUYURU KARTI KAPSAYICISI --- */
+.announcement-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    min-height: 70vh; /* Kartın ortalanması için minimum yükseklik */
+}
+
+/* ANA DUYURU KARTI (Zorunlu Kural: RELATIVE) */
+.announcement-card {
+    position: relative; /* Kapsayıcı position */
+    width: 500px;
+    background: linear-gradient(135deg, #e0f2fe, #ede9fe); /* Örnek görseldeki gibi gradyan */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    cursor: pointer; /* 2. Etkileşimli alan (cursor değişimi) */
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+/* Kartın üzerine gelince hafifçe büyüme (Etkileşim 4: Transition + Hover) */
+.announcement-card:hover {
+    transform: scale(1.02);
+}
+
+/* --- KART İÇİNDEKİ ROZETLER (Zorunlu Kural: ABSOLUTE - En az 3 adet) --- */
+.abs-badge {
+    position: absolute;
+    padding: 8px 16px;
+    font-size: 13px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+/* 1. Absolute Rozet (Sol Üst - Sarı) */
+.badge-free {
+    top: 20px;
+    left: 20px;
+    background-color: #fbbf24;
+    color: white;
+    z-index: 20;
+}
+
+/* 2. Absolute Rozet (Sağ Üst - Yeşil) */
+.badge-date {
+    top: 20px;
+    right: 20px;
+    background-color: #a7f3d0;
+    color: #166534;
+    z-index: 20;
+}
+
+/* 3. Absolute Rozet (Sağ Alt - Beyaz) */
+.badge-location {
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    color: #333;
+    z-index: 15; /* Diğer rozetlerin altında kalacak */
+}
+
+/* 4. Absolute Rozet (Sağ Alt - Pembe - Üst üste binme) */
+.badge-deadline {
+    bottom: 50px; /* Konum rozetinin biraz üzerinde */
+    right: 20px;
+    background-color: #fecdd3;
+    color: #9f1239;
+    z-index: 25; /* Z-INDEX KULLANIMI: Konum rozetinin üzerine biner */
+}
+
+/* Kart İçerik Biçimlendirmesi */
+.card-content {
+    margin-top: 20px; /* Rozetlerin altında kalmaması için */
+}
+
+.card-content h3 {
+    color: #1e293b;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
